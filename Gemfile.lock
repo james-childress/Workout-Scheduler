@@ -42,6 +42,8 @@ GEM
       debug_inspector (>= 0.0.1)
     bootstrap-sass (3.2.0.0)
       sass (~> 3.2)
+    bootstrap-will_paginate (0.0.10)
+      will_paginate
     builder (3.2.2)
     byebug (8.2.1)
     coffee-rails (4.1.0)
@@ -145,6 +147,7 @@ GEM
       binding_of_caller (= 0.7.3.pre1)
       railties (~> 4.0)
       sprockets-rails (>= 2.0, < 4.0)
+    will_paginate (3.0.7)
 
 PLATFORMS
   ruby
@@ -152,6 +155,7 @@ PLATFORMS
 DEPENDENCIES
   bcrypt (= 3.1.7)
   bootstrap-sass (= 3.2.0.0)
+  bootstrap-will_paginate (= 0.0.10)
   byebug
   coffee-rails (= 4.1.0)
   jbuilder (= 2.2.3)
@@ -167,3 +171,4 @@ DEPENDENCIES
   turbolinks (= 2.3.0)
   uglifier (= 2.5.3)
   web-console (= 2.0.0.beta3)
+  will_paginate (= 3.0.7)
