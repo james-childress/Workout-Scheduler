@@ -8,3 +8,24 @@
     </section>
   </aside>
 </div>
+
+<div class="row">
+  <aside class="col-md-4">
+    <section class="user_info">
+      <% @user.workouts.each do |workout| %>
+        Workout 
+        <div>
+          <%= workout.program %>
+          <br><%= workout.exercise %>
+          <br><%= workout.training_max %>
+        </div>
+      <% end %>
+    </section>
+  </aside>
+</div>
+  
+<div class="row">
+  <aside class="col-md-4">
+    <%= link_to "Create Workout", new_user_workout_path(@user), class: "btn btn-lg btn-primary" %>
+  </aside>
+</div>
