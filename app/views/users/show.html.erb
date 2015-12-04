@@ -14,7 +14,13 @@
       <% @user.workouts.each do |workout| %>
         <% if workout.program.eql? "5/3/1"%>
         <div>
-          <b> <%= workout.program %> for <%= workout.exercise %></b> 
+          <b> <%= workout.program %> for <%= workout.exercise %>
+            <% if current_user?(@user) %>
+              <%= link_to "edit", edit_user_workout_path(@user.id, workout.id)%>              
+              <%= link_to "delete", user_workout_path(@user.id, workout.id), 
+                method: :delete, data: { confirm: "You sure?" } %>
+            <% end %>
+          </b> 
           <br><b>Week 1: 3x5+ Week</b>
           <br> <%= ((0.4 * workout.training_max)/5).round * 5 %> x 5
           <br> <%= ((0.5 * workout.training_max)/5).round * 5  %> x 5
@@ -47,11 +53,6 @@
         <% end %>
       <% end %>
     </section>
-  </aside>
-</div>
-  
-<div class="row">
-  <aside class="col-md-4">
     <%= link_to "Create Workout", new_user_workout_path(@user), class: "btn btn-lg btn-primary" %>
   </aside>
 </div>

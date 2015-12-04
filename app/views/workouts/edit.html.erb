@@ -1,0 +1,36 @@
+<% provide(:title, "Edit Workout") %>
+<h1>Edit your workout</h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(@workout, url: user_workout_path(@user.id, @workout.id)) do |f| %>
+      <%= render 'shared/error_messages' %>
+
+      <%= f.label :program %>
+      <div class="radio">
+        <%= f.radio_button :program, "5/3/1" %>
+        <%= f.label :program, "5/3/1" %>
+        <br><%= f.radio_button :program, "Mad Cow 5x5" %>
+        <%= f.label :program, "Mad Cow 5x5" %>
+      </div>
+        
+      <%= f.label :exercise %>
+      <div class="radio">
+        <%= f.radio_button :exercise, "Bench Press" %>
+        <%= f.label :exercise, "Bench Press" %>
+        <br><%= f.radio_button :exercise, "Squat" %>
+        <%= f.label :exercise, "Squat" %>
+        <br><%= f.radio_button :exercise, "Deadlift" %>
+        <%= f.label :exercise, "Deadlift" %>
+      </div>
+
+      <div>
+      <%= f.label :training_max %>
+      <%= f.number_field :training_max, in:0...1000%>
+      </div>
+      
+      <%= f.submit "Save changes", class: "btn btn-primary" %>
+    <% end %>
+
+  </div>
+</div>
