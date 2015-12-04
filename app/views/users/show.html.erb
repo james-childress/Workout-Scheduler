@@ -12,12 +12,39 @@
   <aside class="col-md-4">
     <section class="user_info">
       <% @user.workouts.each do |workout| %>
-        Workout 
+        <% if workout.program.eql? "5/3/1"%>
         <div>
-          <%= workout.program %>
-          <br><%= workout.exercise %>
-          <br><%= workout.training_max %>
+          <b> <%= workout.program %> for <%= workout.exercise %></b> 
+          <br><b>Week 1: 3x5+ Week</b>
+          <br> <%= ((0.4 * workout.training_max)/5).round * 5 %> x 5
+          <br> <%= ((0.5 * workout.training_max)/5).round * 5  %> x 5
+          <br> <%= ((0.6 * workout.training_max)/5).round * 5  %> x 3
+          <br> <%= ((0.65 * workout.training_max)/5).round * 5  %> x 5
+          <br> <%= ((0.75 * workout.training_max)/5).round * 5  %> x 5
+          <br> <%= ((0.85 * workout.training_max)/5).round * 5  %> x 5+
+          <br> <%= ((0.65 * workout.training_max)/5).round * 5  %> AMRAP
+          <br><b>Week 2: 3x3+ Week</b>
+          <br> <%= ((0.4 * workout.training_max)/5).round * 5 %> x 5
+          <br> <%= ((0.5 * workout.training_max)/5).round * 5  %> x 5
+          <br> <%= ((0.6 * workout.training_max)/5).round * 5  %> x 3
+          <br> <%= ((0.7 * workout.training_max)/5).round * 5  %> x 3
+          <br> <%= ((0.8 * workout.training_max)/5).round * 5  %> x 3
+          <br> <%= ((0.9 * workout.training_max)/5).round * 5  %> x 3+
+          <br> <%= ((0.7 * workout.training_max)/5).round * 5  %> AMRAP
+          <br><b>Week 3: 5/3/1+ Week</b>
+          <br> <%= ((0.4 * workout.training_max)/5).round * 5 %> x 5
+          <br> <%= ((0.5 * workout.training_max)/5).round * 5  %> x 5
+          <br> <%= ((0.6 * workout.training_max)/5).round * 5  %> x 3
+          <br> <%= ((0.75 * workout.training_max)/5).round * 5  %> x 5
+          <br> <%= ((0.85 * workout.training_max)/5).round * 5  %> x 3
+          <br> <%= ((0.95 * workout.training_max)/5).round * 5  %> x 1+
+          <br> <%= ((0.75 * workout.training_max)/5).round * 5  %> AMRAP
+          <br><b>Week 4: Deload Week</b>
+          <br> <%= ((0.4 * workout.training_max)/5).round * 5 %> x 5
+          <br> <%= ((0.5 * workout.training_max)/5).round * 5  %> x 5
+          <br> <%= ((0.6 * workout.training_max)/5).round * 5  %> x 3
         </div>
+        <% end %>
       <% end %>
     </section>
   </aside>
