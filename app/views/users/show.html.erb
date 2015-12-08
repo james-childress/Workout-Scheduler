@@ -13,7 +13,7 @@
     <section class="user_info">
       <% @user.workouts.each do |workout| %>
         <b> <%= workout.program %> for <%= workout.exercise %>
-        <% if current_user?(@user) %>
+        <% if current_user?(@user) || current_user.admin? %>
             <%= link_to "edit", edit_user_workout_path(@user.id, workout.id)%>              
             <%= link_to "delete", user_workout_path(@user.id, workout.id), 
               method: :delete, data: { confirm: "You sure?" } %>
@@ -77,7 +77,7 @@
         <% end %>
       <% end %>
     </section>
-    <% if current_user?(@user) %>
+    <% if current_user?(@user) || current_user.admin? %>
       <%= link_to "Create Workout", new_user_workout_path(@user), class: "btn btn-lg btn-primary" %>
     <% end %>
   </aside>
