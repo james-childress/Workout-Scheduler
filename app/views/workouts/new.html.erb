@@ -21,7 +21,13 @@
         <%= f.label :exercise, "Deadlift" %>
       </div>
 
-      <%= f.label :training_max %>
+      <!--<% if @workout.program.eql? "5/3/1"%>-->
+      <!--  <%= f.label :training_max, "1 Rep Training Max" %>-->
+      <!--<% elsif @workout.program.eql? "Mad Cow 5x5"%>-->
+      <!--  <%= f.label :training_max, "5 Rep Training Max" %>-->
+      <!--<% else %>-->
+        <%= f.label :training_max%>
+      <!--<% end %>-->
       <%= f.number_field :training_max, in:0...1000%>
 
       <%= f.submit "Create my workout", class: "btn btn-primary" %>
