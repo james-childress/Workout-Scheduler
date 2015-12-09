@@ -1,5 +1,5 @@
+#
 module SessionsHelper
-
   # Logs in the given user.
   def log_in(user)
     session[:user_id] = user.id
@@ -34,7 +34,7 @@ module SessionsHelper
   def logged_in?
     !current_user.nil?
   end
-  
+
   # Forgets a persistent session.
   def forget(user)
     user.forget
@@ -48,8 +48,8 @@ module SessionsHelper
     session.delete(:user_id)
     @current_user = nil
   end
-  
-    # Redirects to stored location (or to the default).
+
+  # Redirects to stored location (or to the default).
   def redirect_back_or(default)
     redirect_to(session[:forwarding_url] || default)
     session.delete(:forwarding_url)
